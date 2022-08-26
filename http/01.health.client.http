@@ -1,0 +1,23 @@
+@hostname = {{$dotenv HOSTNAME}}
+@port = {{$dotenv PORT}}
+@host = {{hostname}}:{{port}}
+
+###
+GET {{host}}/api/v1/auth/health
+Content-Type: application/json
+
+###
+GET {{host}}/api/v1/users/health
+Accept: application/json
+
+###
+GET {{host}}/error
+Accept: application/json
+
+###
+GET {{host}}/health
+Accept: application/json
+
+###
+GET {{host}}
+Accept: application/json
